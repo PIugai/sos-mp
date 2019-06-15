@@ -26,7 +26,7 @@ Page({
         hasUserInfo: true
       })
       wx.switchTab({
-        url: '/pages/main/main',
+        url: '/pages/map/map',
       })
 
     } else if (this.data.canIUse) {
