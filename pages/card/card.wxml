@@ -1,11 +1,28 @@
 <!--pages/card/card.wxml-->
+
 <view class="navbar">
-  <CustomNav >
-    <view class='pair'>
-      <view>
-        <image bindtap="goBack" id='back' mode="aspectFit" src="/images/back.png" />
+  <CustomNav>
+    <view class="nav-outer-container">
+      <view class='pair'>
+        <view>
+          <image bindtap="goBack" id='back' mode="aspectFit" src="/images/back.png" />
+        </view>
+        <image id='logo' mode="aspectFit" src="/images/logo.png" />
       </view>
-      <image id='logo' mode="aspectFit" src="/images/logo.png" />
     </view>
   </CustomNav>
 </view>
+
+<view class='card'>
+ <image class='avatar' src='/images/avatar_m.png'></image>
+    <view class="card">
+      <view class='h1'>{{post.nickname}}</view>
+      <view class='h2'>{{post.description}}</view>
+      <view class='info'>
+        <view class='group'>
+          <view class='p'>{{post.capacity}}</view>
+          <image class='capacity' src='/images/capacity.png'></image>
+        </view>
+        <view class='p'>{{post.location}}</view>
+      </view>
+    </view></view>
