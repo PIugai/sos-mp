@@ -12,25 +12,27 @@
 
       <!-- location -->
       <view class="">
-        <button type="default" bindtap="bindOnTouchStart">Select location {{name}}</button>
-        <view class="text-area-wrap" style="height:8vh;">
+        <button type="default" bindtap="bindOnTouchStart">Location {{name}}
+          <image src='/images/gps.png' style='height:20px;width:20px;position:absolute;left:15vw;top:14px'></image>
+        </button>
+
+        <view class="text-area-wrap" style="height:0vh;">
           <textarea value="{{location}}" name="location" style="font-size:1px;width:1px;height:1px;"></textarea>
         </view>
       </view>
   
       <!-- max participants*** -->
       <view class="section">
-        <view class="section__title">How many?</view>
         <view class="text-area-wrap">
-          <textarea value="{{capacity}}" placeholder="Number of people this can help" name="capacity" style="height:8vh;"/>
+          <textarea value="{{capacity}}" placeholder="Number of people this can help" name="capacity" style="height:10vh;"/>
         </view>
       </view>
       
       <!-- contact number (string) -->
       <view class="section">
-        <view class="section__title">Contact</view>
+
         <view class="text-area-wrap">
-          <textarea value="{{contact_number}}" placeholder="A phone number for others to reach you" class="" name="contact_number" style="height:8vh;"/>
+          <textarea value="{{contact_number}}" placeholder="A phone number for others to reach you" class="" name="contact_number" style="height:10vh;"/>
         </view>
       </view>
       
