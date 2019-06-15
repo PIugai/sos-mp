@@ -27,7 +27,29 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    let page = this
+    wx.request({
+      url: `http://localhost:3000/posts/${options.id}?lang=zh`,
+      success: function(res) {
+        let post = res.data
+        page.setData({post: post})
+        console.log(page.data)
+      }
+    })
+  },
 
+  formSubmit: function(e) {
+    let comment = e.detail.value.comment
+    let user_id = this.data.post.user_id
+    let post_id = this.data.post.id
+    wx.request({
+      url: `http://localhost:3000/posts/${this.data.post.id}`,
+      method: 'POST',
+      data: {comment: comment, user_id: user_id, post_id: post_id},
+      success: function(res) {
+        console.log(res)
+      }
+    })
   },
 
   /**
