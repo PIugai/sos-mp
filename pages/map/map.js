@@ -38,7 +38,6 @@ Page({
               content: " 厦门思明区政府 \n 12000元/㎡",
               padding: 16,
               fontSize: "16", 
-              display: 'ALWAYS',
               textAlign: 'center',
               bgColor: "#ffffff",
             }

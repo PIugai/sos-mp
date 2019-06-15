@@ -1,8 +1,20 @@
 <!--pages/list/list.wxml-->
-<view class="navbar">
-<CustomNav profilePic="/image/logo.png" />
-</view>
-
-<view wx:for="{{posts}}">
-  <view>{{item.description}}</view>
+<view>
+  <view class="navbar">
+    <CustomNav profilePic="/image/logo.png" />
+  </view>
+  <view class='post' wx:for="{{posts}}" wx:for-item="item" wx:key="item.id">
+    <image class='avatar' src='/images/avatar_f.png'></image>
+    <view class="card">
+      <view class='h1'>{{item.nickname}}</view>
+      <view class='h2'>{{item.description}}</view>
+      <view class='info'>
+        <view class='group'>
+          <view class='p'>{{item.capacity}}</view>
+          <image class='capacity' src='/images/avatar_m.png'></image>
+        </view>
+        <view class='p'>{{item.location}}</view>
+      </view>
+    </view>
+  </view>
 </view>
