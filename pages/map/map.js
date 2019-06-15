@@ -5,7 +5,9 @@ Page({
    * Page initial data
    */
   data: {
-
+    lag: "",
+    long: "",
+    callout: ""
   },
 
   goBack: function () {
@@ -16,7 +18,34 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    var that = this
+    wx.getLocation({
+      success: function (res) {
+        console.log(res)
+        that.setData({
+          addmessage: res.address,
+          lag: res.latitude,
+          long: res.longitude,
+          markers: [{
+            id: 100000,
+            latitude: res.latitude,
+            longitude: res.longitude,
+            iconPath: '/images/mark.png',
+            width: 45,
+            height: 40,
+            callout: {
+              content: " 厦门思明区政府 \n 12000元/㎡",
+              padding: 16,
+              fontSize: "16", 
+              display: 'ALWAYS',
+              textAlign: 'center',
+              bgColor: "#ffffff",
+            }
 
+          }]
+        })
+      }
+    }) 
   },
 
   /**
