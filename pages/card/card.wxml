@@ -26,3 +26,14 @@
         <view class='p'>{{post.location}}</view>
       </view>
     </view></view>
+
+<view>{{post.capacity}}</view>
+<view>{{post.location}}</view>
+<view wx:for="{{post.comments}}">
+  <view>{{item.comment}}</view>
+</view>
+
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <input name="comment" placeholder="please input comment" />
+  <button formType="submit">Submit</button>
+</form>
