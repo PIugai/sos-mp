@@ -45,7 +45,7 @@ Page({
             userInfo: res.userInfo,
             hasUserInfo: true
           })
-
+          getApp().globalData({userInfo: this.data.userInfo})
         }
       })
     }

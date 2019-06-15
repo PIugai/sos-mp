@@ -1,19 +1,18 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/list/list",
     "pages/map/map",
     "pages/card/card",
     "pages/create/create",
-"components/custom-nav/custom-nav",
+    "components/custom-nav/custom-nav",
     "pages/logs/logs"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#1c819e",
     "navigationBarTitleText": "SOS",
-    "navigationBarTextStyle":"black",
-
+    "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
   },
   "permission": {
@@ -21,30 +20,31 @@
       "desc": "你的位置信息将用于小程序位置接口的效果展示"
     }
   },
-    "tabBar": {
-      "backgroundColor": "#1c819e",
-      "borderStyle": "black",
-      "selectedColor": "#ffbe00",
-      "color": "#dfdfdf",
-      "list": [
-        {
-          "pagePath": "pages/list/list",
-          "text": "LIST",
-          "iconPath": "images/list.png",
-          "selectedIconPath": "images/list-selected.png"
-        },
-        {
-          "pagePath": "pages/create/create",
-          "text": "CREATE",
-          "iconPath": "images/create.png",
-          "selectedIconPath": "images/create-selected.png"
-        },
-        {
-          "pagePath": "pages/map/map",
-          "text": "MAP",
-          "iconPath": "images/map.png",
-          "selectedIconPath": "images/map-selected.png"
-        }
-      ]
-    }
+  "tabBar": {
+    "backgroundColor": "#1c819e",
+    "borderStyle": "black",
+    "selectedColor": "#ffbe00",
+    "color": "#dfdfdf",
+    "list": [
+      {
+        "pagePath": "pages/list/list",
+        "text": "LIST",
+        "iconPath": "images/list.png",
+        "selectedIconPath": "images/list-selected.png"
+      },
+      {
+        "pagePath": "pages/create/create",
+        "text": "CREATE",
+        "iconPath": "images/create.png",
+        "selectedIconPath": "images/create-selected.png"
+      },
+      {
+        "pagePath": "pages/map/map",
+        "text": "MAP",
+        "iconPath": "images/map.png",
+        "selectedIconPath": "images/map-selected.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
 }
