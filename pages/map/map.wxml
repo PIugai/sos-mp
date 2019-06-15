@@ -34,6 +34,6 @@
   controls='{{controls}}'
   bindtap='bindMapTap'
   markers= "{{markers}}"
-  scale="12"style="width: 100%; height: 76vh; top: 0vh">
+  scale="15"style="width: 100%; height: 76vh; top: 0vh">
   </map>
 </view>
