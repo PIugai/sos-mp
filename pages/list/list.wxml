@@ -1,0 +1,4 @@
+<!--pages/list/list.wxml-->
+<view class="navbar">
+<CustomNav profilePic="/image/logo_s.png" />
+</view>

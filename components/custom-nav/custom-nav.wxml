@@ -1,0 +1,7 @@
+<!--components/custom-nav/custom-nav.wxml-->
+<view class="nav-outer-container">
+  <slot></slot>
+  <view class="logo-container">
+    <image mode="aspectFit" src="/images/logo.png" />
+   </view>
+</view>
