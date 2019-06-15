@@ -22,22 +22,43 @@ Page({
       success: function(res) {
         console.log(res.data)
         page.setData({posts: res.data.posts})
+
       }
     })
+
+  
+
+    
+    
+
+    
   },
 
   /**
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-
+    let lat = getApp().globalData.lat.toString()
+    let long = getApp().globalData.long.toString()
+    let user_address = `${long.toString()},${lat.toString()}`
+    this.data.posts.forEach(function(post) {
+      let post_address = `${post.long},${post.lat}`
+      let url = `https://restapi.amap.com/v3/direction/walking?origin=${post_address}&destination=${user_address}&key=27df61d7d7a623d9d3ef412a48ee6218`
+      wx.request({
+        url: url,
+        success: function (res) {
+          let km = (res.data.route.paths[0].distance/1000).toString()
+          post.distance = `${km} kilometers away`
+        }
+      })
+    })
   },
 
   /**
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
+   
   },
 
   /**

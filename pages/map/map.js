@@ -24,7 +24,6 @@ Page({
       success: function (res) {
         console.log(res)
         that.setData({
-          addmessage: res.address,
           lag: res.latitude,
           long: res.longitude,
           markers: [{
@@ -38,15 +37,18 @@ Page({
               content: " 厦门思明区政府 \n 12000元/㎡",
               padding: 16,
               fontSize: "16", 
-              display: 'ALWAYS',
               textAlign: 'center',
               bgColor: "#ffffff",
             }
-
+        
           }]
         })
+        getApp().globalData.lat = that.data.lag
+        getApp().globalData.long = that.data.long
       }
     });
+    // 
+    console.log(this.data.lag)
     
     let page = this
     wx.request({
@@ -69,7 +71,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
+    
   },
 
   /**
