@@ -5,6 +5,7 @@ Page({
    * Page initial data
    */
   data: {
+  
     lag: "",
     long: "",
     callout: ""
@@ -45,7 +46,8 @@ Page({
           }]
         })
       }
-    }) 
+    });
+    
   },
 
   /**
