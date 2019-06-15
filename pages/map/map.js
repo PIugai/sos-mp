@@ -26,7 +26,7 @@ Page({
     let that = this
     wx.getLocation({
       success: function (res) {
-        console.log(res)
+        // console.log(res)
         that.setData({
           lat: res.latitude,
           long: res.longitude,
@@ -39,11 +39,12 @@ Page({
     wx.request({
       url: `http://localhost:3000/posts?lang=en`,
       success: function (res) {
-        // console.log(res.data)
+        console.log(res.data)
         that.setData({ posts: res.data.posts })
         let markers = []
         that.data.posts.forEach(function(post) {
           let marker = {
+            id: post.id,
             latitude: parseFloat(post.lat),
             longitude: parseFloat(post.long),
             iconPath: '/images/mark.png',
@@ -55,6 +56,13 @@ Page({
         that.setData({markers: markers})
         console.log(that.data.markers)
       }
+    })
+  },
+
+  goToShowPage: function(e) {
+
+    wx.navigateTo({
+        url: `/pages/card/card?id=${e.markerId}`,
     })
   },
 

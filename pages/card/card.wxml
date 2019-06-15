@@ -1,11 +1,13 @@
 <!--pages/card/card.wxml-->
-<view class="navbar">
-  <CustomNav >
-    <view class='pair'>
-      <view>
-        <image bindtap="goBack" id='back' mode="aspectFit" src="/images/back.png" />
-      </view>
-      <image id='logo' mode="aspectFit" src="/images/logo.png" />
-    </view>
-  </CustomNav>
+
+
+<view>{{post.capacity}}</view>
+<view>{{post.location}}</view>
+<view wx:for="{{post.comments}}">
+  <view>{{item.comment}}</view>
 </view>
+
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <input name="comment" placeholder="please input comment" />
+  <button formType="submit">Submit</button>
+</form>
