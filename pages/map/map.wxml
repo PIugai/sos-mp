@@ -2,6 +2,26 @@
 <view class="navbar">
 <CustomNav profilePic="/images/logo.png" />
 </view>
+<!-- SCROLLING TEXT -->
+<view class='horizontal happnews'>
+  <view class='item happy_tui'>
+    <swiper vertical autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular >
+      <block wx:for="{{news}}">
+        <swiper-item>
+          <view class='show-text-1 '>
+            <text class='tui_text'>推荐</text>
+            <text class='tui_item'>{{item}}</text>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class='more'>
+    <text>更多</text>
+  </view>
+</view>
+<!-- END OF SCROLLING TEXT -->
 
 <view class='map-container'>
   <map 
@@ -18,6 +38,6 @@
   controls='{{controls}}'
   indtap='bindMapTap'
   markers= "{{markers}}"
-  scale="18"style="width: 100%; height: 77vh; top: 8vh">
+  scale="18"style="width: 100%; height: 76vh; top: 0vh">
   </map>
 </view>

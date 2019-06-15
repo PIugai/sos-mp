@@ -20,3 +20,66 @@
   margin-left:44%;
 }
 
+/* SCROLLING TEXT */
+page {
+  background: #f6f6f9;
+}
+
+.horizontal{
+  display: flex;
+  flex-direction: row;
+}
+
+.item {
+  flex: 1;
+}
+
+.happy_tui{
+  padding: 0 8px; 
+}
+
+.happy_tui > swiper {
+  height: 30px;
+  line-height:30px;
+}
+
+.show-text-1{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.tui_item{
+  font-size: 12px; 
+  color: #000; 
+  vertical-align: middle; 
+}
+
+.tui_text{
+  border: 1px solid #ED2A22; 
+  border-radius: 12px; 
+  font-size: 9px; 
+  color: #ED2A22; 
+  padding: 0 3px; 
+  margin: 0 5px 0 0;
+}
+
+.more{
+  padding: 0 0 0 8px;
+  border-left: 1px solid #333;
+  text-align:center;
+  line-height:18px;
+  margin:auto 0;
+}
+
+.more > text{
+  font-size: 12px; 
+  color: #000;
+}
+
+.happnews{
+  margin-top:10px;
+  padding: 8px 10px; 
+  background: white;
+}
