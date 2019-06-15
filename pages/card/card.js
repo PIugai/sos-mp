@@ -10,11 +10,12 @@ Page({
 
   // launches WeChat navigation, but need to replace below hard-coded data with data from the specific SHOW / post
   bindOnTouchStart: function (e) {
+    let page = this
     wx.openLocation({
-      latitude: 31.11258,
-      longitude: 121.38474,
+      latitude: parseFloat(page.data.post.lat),
+      longitude: parseFloat(page.data.post.long),
       scale: 18,
-      name: 'KFC Minghang 1',
+      name: page.data.post.location,
       // address: '金平区长平路93号'
     })
   },
@@ -33,7 +34,7 @@ Page({
       success: function(res) {
         let post = res.data
         page.setData({post: post})
-        console.log(page.data)
+        console.log(page.data.post)
       }
     })
   },
