@@ -2,3 +2,38 @@
 <view class="navbar">
 <CustomNav profilePic="/image/logo_s.png" />
 </view>
+
+    <form bindsubmit="bindSubmit">
+
+      <!-- describe*** -->
+      <view class="section">
+        <textarea value="{{description}}" placeholder="Describe in 140 words or less what you are sharing. Shelter, food, medicine, supplies, etc." class="" style="height: 30vh;" name="description"/>
+      </view> 
+
+      <!-- location -->
+      <view class="">
+        <button type="default" bindtap="bindOnTouchStart">Select location {{name}}</button>
+        <view class="text-area-wrap" style="height:8vh;">
+          <textarea value="{{location}}" name="location" style="font-size:1px;width:1px;height:1px;"></textarea>
+        </view>
+      </view>
+  
+      <!-- max participants*** -->
+      <view class="section">
+        <view class="section__title">How many?</view>
+        <view class="text-area-wrap">
+          <textarea value="{{capacity}}" placeholder="Number of people this can help" name="capacity" style="height:8vh;"/>
+        </view>
+      </view>
+      
+      <!-- contact number (string) -->
+      <view class="section">
+        <view class="section__title">Contact</view>
+        <view class="text-area-wrap">
+          <textarea value="{{contact_number}}" placeholder="A phone number for others to reach you" class="" name="contact_number" style="height:8vh;"/>
+        </view>
+      </view>
+      
+      
+      <button type="primary" class="" form-type="submit" loading="{{loading}}">SUBMIT</button>
+    </form>
