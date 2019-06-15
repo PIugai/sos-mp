@@ -27,9 +27,12 @@
       </view>
     </view></view>
 
-<view>{{post.capacity}}</view>
-<view>{{post.location}}</view>
-<view wx:for="{{post.comments}}">
-  <view>{{item.comment}}</view>
+<view>capacity: {{post.capacity}}</view>
+<view>location: {{post.location}}</view>
+<view>description: {{post.description}}</view>
+<view>date: {{post.date}}</view>
+<view wx:for="{{post.comments}}" wx:for-item="comment">
+  <view>comment: {{comment.comment}}</view>
+  <view>date: {{comment.date}}</view>
 </view>
 <button type="default" bindtap="bindOnTouchStart">Navigate</button>
