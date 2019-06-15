@@ -24,20 +24,6 @@
 <!-- END OF SCROLLING TEXT -->
 
 <view class='map-container'>
-  <map 
-  class='map' 
-  id='myMap' 
-  longitude="{{long}}" 
-  latitude="{{lag}}" 
-  scale="{{scale}}" 
-  show-location="true" 
-  bindmarkertap="bindMakertap"
-  bindregionchange='bindregionchange'
-  bindcallouttap = "bindcallouttap" 
-  bindcontroltap='controlTap'  
-  controls='{{controls}}'
-  indtap='bindMapTap'
-  markers= "{{markers}}"
-  scale="18"style="width: 100%; height: 76vh; top: 0vh">
+  <map class='map' id='myMap' longitude="{{long}}" latitude="{{lat}}" show-location="true" controls='{{controls}}' bindtap='bindMapTap' markers="{{markers}}" scale="12" style="width: 100%; height: 76vh; top: 0vh">
   </map>
 </view>
