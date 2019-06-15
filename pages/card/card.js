@@ -8,6 +8,17 @@ Page({
 
   },
 
+  // launches WeChat navigation, but need to replace below hard-coded data with data from the specific SHOW / post
+  bindOnTouchStart: function (e) {
+    wx.openLocation({
+      latitude: 31.11258,
+      longitude: 121.38474,
+      scale: 18,
+      name: 'KFC Minghang 1',
+      // address: '金平区长平路93号'
+    })
+  },
+
   goBack: function () {
     wx.navigateBack();
   },

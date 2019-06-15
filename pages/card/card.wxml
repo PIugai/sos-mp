@@ -9,3 +9,4 @@
     </view>
   </CustomNav>
 </view>
+<button type="default" bindtap="bindOnTouchStart">Navigate</button>
