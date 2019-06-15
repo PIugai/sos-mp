@@ -1,5 +1,6 @@
 /* pages/card/card.wxss */
 .pair {
+  position: sticky;
   display: flex;
   justify-items: center;
 }

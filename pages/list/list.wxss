@@ -1,4 +1,5 @@
 /* pages/list/list.wxss */
+
 .page {
   background-image: url("/images/landing.jpg");
 }
@@ -11,67 +12,79 @@
 #back {
   padding-left: 4vw;
   padding-top: 7vh;
-  width:32px;
-  height:25px;
+  width: 32px;
+  height: 25px;
 }
 
 #logo {
-   width:56px;
-  height:56px;
-  margin:47px 0 0 19px;
-  position:absolute;
-  margin-top:9%;
-  margin-left:44%;
+  width: 56px;
+  height: 56px;
+  margin: 47px 0 0 19px;
+  position: absolute;
+  margin-top: 9%;
+  margin-left: 44%;
 }
 
-.post {
+.post-card {
   display: flex;
   justify-content: space-between;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
   height: 20vh;
   width: 95%;
-  margin: 10px auto;
+  margin: 10px 10px;
   background-size: cover !important;
   background-position: center;
   color: black;
   border-radius: 14px;
-  box-shadow:         1px 1px 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
   background-color: #dfdfdf;
   text-align: center;
   padding: 5px;
 }
 
 .avatar {
-width: 32px;
-height: 32px;
-left: 31px;
-top: 180px;
+  margin: 10px 10px;
+  width: 32px;
+  height: 32px;
+  left: 31px;
+  top: 180px;
 }
 
 .group {
   display: flex;
-   justify-content: space-between;
+  justify-content: space-between;
 }
 
 .info {
   display: flex;
-   justify-content: space-between;
+  justify-content: space-between;
 }
 
 .capacity {
-width: 32px;
-height: 32px;
-left: 31px;
-top: 180px;
+  width: 32px;
+  height: 32px;
+  left: 31px;
+  top: 180px;
 }
 
 .h1 {
-  font-size: 10pt;
+  font-size: 17pt;
+  text-align: left;
+  font-weight: bold;
+  margin:5px;
 }
 
 .h2 {
-  font-size: 10pt;
+  font-size: 13pt;
+  text-align: left;
+  margin:5px;
 }
 
 .p {
   font-size: 10pt;
+  margin:5px;
 }
