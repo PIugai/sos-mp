@@ -9,3 +9,14 @@
     </view>
   </CustomNav>
 </view>
+
+<view  class='card'>
+  <view>{{user_nickname.nickname}}</view>
+  <view>Capacity: {{capacity}}</view>
+  <view>Description: {{description}}</view>
+  <view>Address: {{location}}</view>
+  <view>Contact: {{contact_number}}</view>
+  <view>Full? {{is_full}}</view>
+</view>
+
+

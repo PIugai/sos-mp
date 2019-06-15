@@ -16,7 +16,22 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    console.log(options)
+    let page = this
+    wx.request({
+      url: `http://localhost:3000/posts/${options.id}?lang=en`,
+      method: 'GET',
+      success(res) {
+        console.log(res.data)
+        const post = res.data;
 
+        // Update local data
+        page.setData(
+          post
+        );
+
+      }
+    });
   },
 
   /**

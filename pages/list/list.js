@@ -18,7 +18,7 @@ Page({
   onLoad: function (options) {
     let page = this
     wx.request({
-      url: `http://localhost:3000/posts?lang=${getApp().globalData.userInfo.language}`,
+      url: `http://localhost:3000/posts?lang=en`,
       success: function(res) {
         console.log(res.data)
         page.setData({posts: res.data.posts})
@@ -51,8 +51,8 @@ Page({
   },
 
   showPost(e) {
-    const post_id = e.currentTarget.dataset.post;
-
+    const post_id = e.target.dataset.id;
+    // console.log(post_id)
     wx.navigateTo({
       url: `/pages/card/card?id=${post_id}`
     });
