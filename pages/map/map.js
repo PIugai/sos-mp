@@ -5,7 +5,14 @@ Page({
    * Page initial data
    */
   data: {
-  
+    news: [
+      '平安夜，百人祝福领取苹果~',
+      '寒流来袭，你的秋裤准备好了吗？',
+      '快收下，新鲜出炉冬季实用穿搭指南~'
+    ],
+    autoplay: true,
+    interval: 2000,
+    duration: 1000,
     lag: "",
     long: "",
     callout: ""
