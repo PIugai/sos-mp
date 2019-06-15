@@ -50,6 +50,14 @@ Page({
     
   },
 
+  showPost(e) {
+    const post_id = e.currentTarget.dataset.post;
+
+    wx.navigateTo({
+      url: `/pages/card/card?id=${post_id}`
+    });
+  },
+
   /**
    * Lifecycle function--Called when page is initially rendered
    */
