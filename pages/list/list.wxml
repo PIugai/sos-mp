@@ -6,7 +6,7 @@
   <view class='post' wx:for="{{posts}}" bindtap="showPost" wx:for-item="item" wx:key="item.id">
   <view class='post-card'>
     <image class='avatar' src='/images/avatar_m.png'></image>
-    <view class="card">
+    <view class="card" data-id="{{item.id}}">
       <view class='h1'>{{item.nickname}}</view>
       <view class='h2'>{{item.description}}</view>
       <view class='info'>
