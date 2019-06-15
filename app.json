@@ -16,6 +16,11 @@
 
     "navigationStyle": "custom"
   },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
     "tabBar": {
       "backgroundColor": "#1c819e",
       "borderStyle": "black",

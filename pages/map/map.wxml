@@ -1,4 +1,4 @@
 <!--pages/map/map.wxml-->
 <view class="navbar">
-<CustomNav profilePic="/image/logo_s.png" />
+<CustomNav profilePic="/images/logo.png" />
 </view>
