@@ -97,7 +97,7 @@ Page({
         data: event,
         success(res) {
           wx.reLaunch({
-            url: '/pages/create/create',
+            url: '/pages/map/map',
           })
         }
       })
