@@ -22,9 +22,9 @@ Page({
       success: function(res) {
         console.log(res.data)
         page.setData({posts: res.data.posts})
-        let lat = getApp().globalData.lat.toString()
-        let long = getApp().globalData.long.toString()
-        let user_address = `${long.toString()},${lat.toString()}`
+        // console.log(getApp().globalData.lag, getApp().globalData.long)
+        page.setData({ lat: getApp().globalData.lat.toString(), long: getApp().globalData.long.toString()})
+        let user_address = `${page.data.long},${page.data.lat}`
         page.data.posts.forEach(function (post) {
           let post_address = `${post.long},${post.lat}`
           // console.log(post_address)
