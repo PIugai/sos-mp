@@ -8,6 +8,18 @@ Page({
 
   },
 
+  // launches WeChat navigation, but need to replace below hard-coded data with data from the specific SHOW / post
+  bindOnTouchStart: function (e) {
+    let page = this
+    wx.openLocation({
+      latitude: parseFloat(page.data.post.lat),
+      longitude: parseFloat(page.data.post.long),
+      scale: 18,
+      name: page.data.post.location,
+      // address: '金平区长平路93号'
+    })
+  },
+
   goBack: function () {
     wx.navigateBack();
   },
@@ -16,7 +28,38 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    let page = this
+    wx.request({
+      url: `http://localhost:3000/posts/${options.id}?lang=en`,
+      success: function(res) {
+        let post = res.data
+        page.setData({post: post})
+        console.log(page.data.post)
+      }
+    })
+  },
 
+  formSubmit: function(e) {
+    let comment = e.detail.value.comment
+    let user_id = this.data.post.user_id
+    let post_id = this.data.post.id
+    wx.showToast({
+      title: 'Success!',
+      logo: 'success'
+    })
+    wx.request({
+      url: `http://localhost:3000/posts/${this.data.post.id}`,
+      method: 'POST',
+      data: {comment: {
+        comment: comment,
+        user_id: user_id,
+        post_id: post_id}
+        },
+      success: function(res) {
+        console.log(res)
+      }
+    })
+    
   },
 
   /**

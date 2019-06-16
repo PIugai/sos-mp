@@ -13,9 +13,6 @@ Page({
     autoplay: true,
     interval: 2000,
     duration: 1000,
-    lag: "",
-    long: "",
-    callout: ""
   },
 
   goBack: function () {
@@ -26,44 +23,46 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    var that = this
+    let that = this
     wx.getLocation({
       success: function (res) {
-        console.log(res)
+        // console.log(res)
         that.setData({
-          lag: res.latitude,
+          lat: res.latitude,
           long: res.longitude,
-          markers: [{
-            id: 100000,
-            latitude: res.latitude,
-            longitude: res.longitude,
-            iconPath: '/images/mark.png',
-            width: 45,
-            height: 40,
-            callout: {
-              content: " 厦门思明区政府 \n 12000元/㎡",
-              padding: 16,
-              fontSize: "16", 
-              textAlign: 'center',
-              bgColor: "#ffffff",
-            }
-        
-          }]
         })
         getApp().globalData.lat = that.data.lag
         getApp().globalData.long = that.data.long
       }
     });
-    // 
-    console.log(this.data.lag)
     
-    let page = this
     wx.request({
-      url: `http://localhost:3000/posts?lang=${getApp().globalData.userInfo.language}`,
+      url: `http://localhost:3000/posts?lang=en`,
       success: function (res) {
         console.log(res.data)
-        page.setData({ posts: res.data.posts })
+        that.setData({ posts: res.data.posts })
+        let markers = []
+        that.data.posts.forEach(function(post) {
+          let marker = {
+            id: post.id,
+            latitude: parseFloat(post.lat),
+            longitude: parseFloat(post.long),
+            iconPath: '/images/mark.png',
+            width: 45,
+            height: 40
+            }
+          markers.push(marker)
+        })
+        that.setData({markers: markers})
+        console.log(that.data.markers)
       }
+    })
+  },
+
+  goToShowPage: function(e) {
+
+    wx.navigateTo({
+        url: `/pages/card/card?id=${e.markerId}`,
     })
   },
 
