@@ -72,9 +72,14 @@
 				},
 				{
 					"id": -1,
+<<<<<<< HEAD
 					"name": "create",
 					"pathName": "pages/create/create",
 					"query": "",
+=======
+					"name": "card",
+					"pathName": "pages/card/card",
+>>>>>>> master
 					"scene": null
 				}
 			]

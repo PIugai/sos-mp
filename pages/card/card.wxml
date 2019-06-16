@@ -1,22 +1,54 @@
 <!--pages/card/card.wxml-->
+
 <view class="navbar">
-  <CustomNav >
-    <view class='pair'>
-      <view>
-        <image bindtap="goBack" id='back' mode="aspectFit" src="/images/back.png" />
+  <CustomNav>
+    <view class="nav-outer-container">
+      <view class='pair'>
+        <view>
+          <image bindtap="goBack" id='back' mode="aspectFit" src="/images/back.png" />
+        </view>
+        <image id='logo' mode="aspectFit" src="/images/logo.png" />
       </view>
-      <image id='logo' mode="aspectFit" src="/images/logo.png" />
     </view>
   </CustomNav>
 </view>
 
-<view  class='card'>
-  <view>{{user_nickname.nickname}}</view>
-  <view>Capacity: {{capacity}}</view>
-  <view>Description: {{description}}</view>
-  <view>Address: {{location}}</view>
-  <view>Contact: {{contact_number}}</view>
-  <view>Full? {{is_full}}</view>
-</view>
+<view class='card'>
+ 
+  <view class='h1'>
+    <image class='avatar' src='/images/avatar_m.png'></image>{{post.user_nickname.nickname}}
+  </view>
+  <view class="card">
+   <view class='info'>
+      <view class='group'>
+         <image class='description' src='/images/description.png'></image>
+         <view class='p'><view class="header">Description:</view> {{post.description}}</view>
+      </view>
+        <view class='group'>
+          <image class='capacity' src='/images/capacity.png'></image>
+          <view class='p'><view class="header">Capacity:</view> {{post.capacity}}</view>
+        </view>
+        <view class='group map'>
+          <image class='location' src='/images/location.svg'></image>
+          <view class='p'><view class="header">Address:</view>{{post.location}}</view>
+          <button class='navigation-button' bindtap="bindOnTouchStart"> <image class='location' src='/images/map.png'></image>Map</button>
+         </view>
+        </view>
 
+        <view class='comments-card'>
+          <view class='comments-heading'>Comments</view>
+        <view class='comments'>
+          <view wx:for="{{post.comments}}" wx:for-item="comment">
+          <view class='date'>{{comment.date}}</view>
+          <view class="comments-content">{{comment.comment}}</view>
+        </view>
+        
+      </view>
+      </view>
+     
+      
+
+
+    </view>
+    </view>
 
