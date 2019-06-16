@@ -45,8 +45,9 @@ Page({
     let user_id = this.data.post.user_id
     let post_id = this.data.post.id
     wx.showToast({
-      title: 'Success!',
-      logo: 'success'
+      title: 'Posting...',
+      icon: 'loading',
+      duration: 3000,
     })
     wx.request({
       url: `http://localhost:3000/posts/${this.data.post.id}`,
@@ -58,6 +59,9 @@ Page({
         },
       success: function(res) {
         console.log(res)
+        wx.redirectTo({
+          url: `/pages/card/card?id=${post_id}`,
+        })
       }
     })
   },
