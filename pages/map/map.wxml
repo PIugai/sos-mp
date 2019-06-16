@@ -9,7 +9,7 @@
       <block wx:for="{{news}}">
         <swiper-item>
           <view class='show-text-1 '>
-            <text class='tui_text'>推荐</text>
+            <text class='tui_text'>最新</text>
             <text class='tui_item'>{{item}}</text>
           </view>
         </swiper-item>
@@ -17,9 +17,9 @@
     </swiper>
   </view>
 
-  <view class='more'>
+  <!-- <view class='more'>
     <text>更多</text>
-  </view>
+  </view> -->
 </view>
 <!-- END OF SCROLLING TEXT -->
 
@@ -34,6 +34,6 @@
   controls='{{controls}}'
   bindtap='bindMapTap'
   markers= "{{markers}}"
-  scale="15"style="width: 100%; height: 76vh; top: 0vh">
+  scale="15"style="width: 100%; height: 81vh; top: 0vh">
   </map>
 </view>
