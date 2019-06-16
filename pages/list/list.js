@@ -18,8 +18,7 @@ Page({
   onLoad: function (options) {
     let page = this
     wx.request({
-//       url: `http://localhost:3000/posts?lang=en`,
-      url: `http://localhost:3000/posts?lang=${getApp().globalData.userInfo.language.slice(0,2)}`,
+      url: `http://localhost:3000/posts?lang=en`,
       success: function(res) {
         console.log(res.data)
         page.setData({posts: res.data.posts})
@@ -33,12 +32,16 @@ Page({
           wx.request({
             url: url,
             success: function (res) {
-              console.log(res)
-              let km = (res.data.route.paths[0].distance / 1000).toString()
-              post.distance = `${km} kilometers away`
+              post.distance = res.data.route.paths[0].distance
               console.log(post.distance)
             }
           })
+          page.setData({posts: page.data.posts.sort(function (a,b) {
+            let x = a.distance
+            let y = b.distance
+            return ((x < y) ? 1 : ((x > y) ? -1 : 0));
+          })
+        })
         })
       }
     })
@@ -52,6 +55,7 @@ Page({
   },
 
   showPost(e) {
+    console.log(e)
     const post_id = e.target.dataset.id;
     // console.log(post_id)
     wx.navigateTo({

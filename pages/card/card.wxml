@@ -42,6 +42,10 @@
           <view class='date'>{{comment.date}}</view>
           <view class="comments-content">{{comment.comment}}</view>
         </view>
+        <form bindsubmit="formSubmit">
+          <input name="comment" placeholder='input comment here'></input>
+          <button formType="submit">Submit</button>
+        </form>
         
       <form bindsubmit="formSubmit">
        <input class="comment-input" name="comment" placeholder='input comment here'></input>

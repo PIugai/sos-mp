@@ -1,4 +1,8 @@
 /* pages/map/map.wxss */
+page {
+  background-color:#358394;
+}
+
 .pair {
   display: flex;
   justify-items: center;
