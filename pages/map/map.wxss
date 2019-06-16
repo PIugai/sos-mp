@@ -79,7 +79,7 @@ page {
 }
 
 .happnews{
-  margin-top:10px;
+  margin-top:0px;
   padding: 8px 10px; 
   background: white;
 }
