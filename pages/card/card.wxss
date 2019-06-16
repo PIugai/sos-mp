@@ -2,9 +2,12 @@
 /* pages/card/card.wxss */
 page {
   background-image: url("http://lc-f0mqpbjn.cn-n1.lcfile.com/9b96b3060710a21dc925/1753895089.jpg");
+  background:#1c819e;
   background-size: cover;
   background-repeat: no-repeat;
   font-family: arial;
+
+
 }
 
 .nav-outer-container {
@@ -49,11 +52,12 @@ page {
   background-size: cover !important;
   background-position: center;
   color: black;
-  border-radius: 14px;
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
-  background-color: #dfdfdf;
+  border-radius: 10px;
+  /* box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3); */
+ background-color:rgba(255, 255, 255, 0.7);
   /* text-align: center; */
   padding: 5px;
+  border:white solid 1px;
 }
 
 .info {
@@ -117,6 +121,7 @@ page {
 .group {
   align-items:center;
   margin-bottom: 16px;
+  margin-top: 10px;
 }
 
 .comments-card {
@@ -125,7 +130,7 @@ page {
 
 .comments-heading {
   margin-bottom: 10px;
-  font-size: 17px;
+  font-size: 15px;
 }
 .comments {
   /* margin-top: 20px; */
@@ -136,19 +141,32 @@ page {
   padding:7px;
 }
 
+.comment-submit {
+  font-size:14px;
+  background-color:transparent;
+  color:grey;
+}
+
 .comments-content {
-  font-size: 16px;
+  font-size: 14px;
   margin-top:5px
 }
 
+.comment-input {
+  font-family: arial;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
 .date {
-  font-size:13px;
+  font-size:12px;
+  margin-top:16px;
 }
 
 .navigation-button {
   background:#dd3e40;
   border-radius:-5%;
-  width:109px;
+  width:97px;
   height:37px;
   align-items:center;
   justify-content:center;
@@ -156,4 +174,6 @@ page {
   color:white;
   font-weight:;
   padding:21px 10px;
+  font-size: 13px;
+  margin-top: 8px;
 }
