@@ -5,6 +5,7 @@ page {
   background-size: cover;
   background-repeat: no-repeat;
   font-family: arial;
+  background-color:#358394;
 }
 
 .nav-outer-container {
