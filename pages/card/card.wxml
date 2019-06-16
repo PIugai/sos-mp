@@ -47,6 +47,11 @@
           <button formType="submit">Submit</button>
         </form>
         
+      <form bindsubmit="formSubmit">
+       <input class="comment-input" name="comment" placeholder='input comment here'></input>
+      <button class="comment-submit" formType="submit">Submit</button>
+      </form>
+  
       </view>
       </view>
      
