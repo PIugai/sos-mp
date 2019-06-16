@@ -30,7 +30,7 @@ Page({
   onLoad: function (options) {
     let page = this
     wx.request({
-      url: `http://localhost:3000/posts/${options.id}?${getApp().globalData.userInfo.language.slice(0, 2)}`,
+      url: `http://localhost:3000/posts/${options.id}?lang=${getApp().globalData.userInfo.language.slice(0, 2)}`,
       success: function(res) {
         let post = res.data
         // console.log(res.data)
