@@ -33,6 +33,7 @@ Page({
       url: `http://localhost:3000/posts/${options.id}?lang=en`,
       success: function(res) {
         let post = res.data
+        // console.log(res.data)
         page.setData({post: post})
         console.log(page.data.post)
       }
@@ -59,7 +60,6 @@ Page({
         console.log(res)
       }
     })
-    
   },
 
   /**
