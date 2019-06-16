@@ -5,7 +5,7 @@ Page({
    * Page initial data
    */
   data: {
-
+    load: false
   },
 
   goBack: function () {
@@ -17,9 +17,20 @@ Page({
    */
   onLoad: function (options) {
     let page = this
+    wx.showLoading({
+      title: 'Asking Watson',
+      icon: 'loading',
+      duration: 3000
+    })
+
     wx.request({
       url: `http://localhost:3000/posts?lang=en`,
       success: function(res) {
+        wx.showToast({
+          title: 'Language Detected',
+          icon: 'success',
+          duration: 1000,
+        })
         console.log(res.data)
         page.setData({posts: res.data.posts})
         // console.log(getApp().globalData.lag, getApp().globalData.long)
