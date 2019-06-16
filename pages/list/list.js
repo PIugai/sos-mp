@@ -18,7 +18,7 @@ Page({
   onLoad: function (options) {
     let page = this
     wx.request({
-      url: `http://localhost:3000/posts?lang=${getApp().globalData.userInfo.language}`,
+      url: `http://localhost:3000/posts?lang=${getApp().globalData.userInfo.language.slice(0,2)}`,
       success: function(res) {
         console.log(res.data)
         page.setData({posts: res.data.posts})
