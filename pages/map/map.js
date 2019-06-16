@@ -31,13 +31,13 @@ Page({
           lat: res.latitude,
           long: res.longitude,
         })
-        getApp().globalData.lat = that.data.lag
+        getApp().globalData.lat = that.data.lat
         getApp().globalData.long = that.data.long
       }
     });
     
     wx.request({
-      url: `http://localhost:3000/posts?lang=en`,
+      url: `http://localhost:3000/posts`,
       success: function (res) {
         console.log(res)
         that.setData({ posts: res.data.posts })
